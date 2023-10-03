@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "tkIYWB3jGKdEiIxOcb43krPKTSK7L+dP4qx+l7iryDLotKfT913I7pE+1Xe7LUd5C0420aDwWSaC9aRA/Nv/6g==",
+  "success": true,
+  "projectFilePath": "D:\\Users\\mina987\\Desktop\\ChatX\\Server\\Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mina987\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\mina987\\.nuget\\packages\\websocketsharp-netstandard\\1.0.1\\websocketsharp-netstandard.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

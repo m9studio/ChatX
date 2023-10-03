@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>ChatX</title>
+		<link rel="icon" href="min/icon.ico">
+		<link type="text/css" rel="stylesheet" href="min/style.css">
+		<script src="min/script.js"></script>
+		<script src="min/coder.js"></script>
+	</head>
+	<body>
+		<div class="head">
+			<input id="InputServer" placeholder="Server">
+			<input id="InputPort" placeholder="Port">
+			<input id="InputService" placeholder="Service">
+			<input id="InputChat" value = "12" placeholder="Chat">
+			<input id="InputCode" placeholder="Code">
+			<input id="InputName" value = "a1" placeholder="Name">
+			<button onclick="JoinChat()">Join</button>
+		</div>
+		
+		<div class="body">
+			<div class="chat">
+				<div class="messages" id="ListMessage">
+					<div class="message">
+						<div class="name">a1</div>
+						<hr>
+						<div>тестовое сообщение</div>
+					</div>
+					<div class="info">you joined in chat</div>
+					<div class="message">
+						<div class="name">a1</div>
+						<hr>
+						<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+					</div>
+					
+					
+				</div>
+				<div class="sender">
+					<input id="InputMessage" placeholder="Message">
+					<button onclick="SendMessage()">Send</button>
+				</div>
+			</div>
+			<div class="users" id="ListUser">
+				<div class="name">a1</div>
+				<div class="name">a2</div>
+				<div class="name">a3</div>
+				<div class="name">a4</div>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>

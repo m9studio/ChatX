@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>ChatX</title>
+		<link rel="icon" href="min/icon.ico">
+		<link type="text/css" rel="stylesheet" href="min/style.css">
+		<script src="min/script.js"></script>
+		<script src="min/coder.js"></script>
+	</head>
+	<body onload="AddEvent()">
+		<div class="head">
+			<input id="InputServer" placeholder="Server">
+			<input id="InputPort" placeholder="Port">
+			<input id="InputService" placeholder="Service">
+			<input id="InputChat" placeholder="Chat">
+			<input id="InputCode" placeholder="Code">
+			<input id="InputName" placeholder="Name">
+			<button onclick="JoinChat()">Join</button>
+		</div>
+		
+		<div class="body">
+			<div class="chat">
+				<div class="messages" id="ListMessage">
+				</div>
+				<div class="sender">
+					<input id="InputMessage" placeholder="Message">
+					<button onclick="SendMessage()">Send</button>
+				</div>
+			</div>
+			<div class="users" id="ListUser">
+			</div>
+		</div>
+		
+		
+	</body>
+</html>
