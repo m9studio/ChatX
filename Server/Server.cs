@@ -12,6 +12,7 @@ using WebSocketSharp;
 using WebSocketSharp.Server;
 using System.Security.Cryptography.X509Certificates;
 using WebSocketSharp.Net;
+using System.Diagnostics;
 
 namespace Server
 {
@@ -21,6 +22,12 @@ namespace Server
         static Dictionary<WebSocket, Client> Users = new Dictionary<WebSocket, Client>();
         static WebSocketServer webSocketServer;
         
+        static public void Stop()
+        {
+            webSocketServer.Stop();
+            ChatList = new Dictionary<string, Chat>();
+            Users = new Dictionary<WebSocket, Client>();
+        }
         static public void Start(int Port, string Service)
         {
             webSocketServer = new WebSocketServer( Port);
@@ -137,6 +144,52 @@ namespace Server
                 }
             }
         }
+
+        static public int __CountChat() => ChatList.Count;
+        static public int __CountUser()
+        {
+            int I = 0;
+            try
+            {
+                foreach(KeyValuePair<string, Chat> item in ChatList)
+                {
+                    I += item.Value.__CountUser();
+                }
+            } catch { }
+            return I;
+        }
+        static public string __ListChat()
+        {
+            string I = "Chat List:";
+            int i = 0;
+            try
+            {
+                foreach (KeyValuePair<string, Chat> item in ChatList)
+                {
+                    I += "\n" + i + ") " + item.Key;
+                    i++;
+                }
+            } catch { }
+            return I;
+        }
+        static public int __CountChatUser(int i)
+        {
+            try
+            {
+                foreach (KeyValuePair<string, Chat> item in ChatList)
+                {
+                    //I += "\n" + i + ") " + item.Key;
+                    //i++;
+                    if(i == 0)
+                    {
+                        return item.Value.__CountUser();
+                    }
+                    i--;
+                }
+            }
+            catch { }
+            return 0;
+        }
     }
     class Client
     {
@@ -158,6 +211,7 @@ namespace Server
     {
         List<Client> Clients= new List<Client>();
         int MessageId = 0;
+        public int __CountUser() => Clients.Count;
         public Chat() { }
         public void Message(Client client, string msg)
         {
